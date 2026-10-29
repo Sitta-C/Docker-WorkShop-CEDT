@@ -28,7 +28,7 @@ WORKDIR /app
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    npm install -g npm@latest && \
+    npm install -g tar@7.5.19 && \
     rm -rf /var/lib/apt/lists/*
 
 # TODO(step-4e): copy the fully-installed app from the builder stage.
