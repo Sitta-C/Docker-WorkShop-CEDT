@@ -26,6 +26,11 @@ FROM node:20.17-slim
 
 WORKDIR /app
 
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    npm install -g tar@7.5.19 && \
+    rm -rf /var/lib/apt/lists/*
+
 # TODO(step-4e): copy the fully-installed app from the builder stage.
 COPY --from=builder /app /app
 
